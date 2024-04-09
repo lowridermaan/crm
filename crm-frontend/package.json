@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "core-js": "^3.35.1",
+    "perfect-scrollbar": "^1.5.5",
+    "regenerator-runtime": "^0.14.1"
+  },
+  "name": "crm-frontend",
+  "version": "1.0.0",
+  "devDependencies": {
+    "parcel": "^2.11.0"
+  },
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

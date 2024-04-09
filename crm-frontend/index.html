@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRM</title>
+    <link
+      rel="stylesheet"
+      href="node_modules/perfect-scrollbar/css/perfect-scrollbar.css"
+    />
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <script src="node_modules/perfect-scrollbar/dist/perfect-scrollbar.js"></script>
+    <script type="module" src="js/controller.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header-wrapper">
+          <a href="#" class="header__logo logo">
+            <img src="./images/logo.svg" alt="" class="logo__img" />
+          </a>
+          <div class="header__search search">
+            <input
+              class="search__input"
+              type="text"
+              placeholder="Введите запрос"
+            />
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <section class="clients">
+        <div class="container clients__container">
+          <h1 class="clients__title text-reset">Клиенты</h1>
+          <div class="clients__table-wrapper">
+            <div class="clients__table-head table-head">
+              <table class="table-head__table table">
+                <thead class="table__head-body">
+                  <tr class="table__row">
+                    <th
+                      class="table__text heading-title heading-title--id column-1"
+                    >
+                      <span>ID</span>
+                      <span class="arrow-up">
+                        <svg
+                          class="arrow-up__icon"
+                          width="8"
+                          height="8"
+                          viewBox="0 0 8 8"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M3.49691e-07 4L0.705 4.705L3.5 1.915L3.5 8L4.5 8L4.5 1.915L7.29 4.71L8 4L4 -3.49691e-07L3.49691e-07 4Z"
+                            fill="#9873FF"
+                          />
+                        </svg>
+                      </span>
+                    </th>
+                    <th class="table__text heading-title column-2">
+                      <span class="heading-title__text"
+                        >Фамилия Имя Отчество</span
+                      >
+                      <span class="arrow-down">
+                        <svg
+                          class="arrow-down__icon"
+                          width="8"
+                          height="8"
+                          viewBox="0 0 8 8"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M3.49691e-07 4L0.705 4.705L3.5 1.915L3.5 8L4.5 8L4.5 1.915L7.29 4.71L8 4L4 -3.49691e-07L3.49691e-07 4Z"
+                            fill="#9873FF"
+                          />
+                        </svg>
+                      </span>
+                      <span class="heading-title__alph">A-Я</span>
+                    </th>
+                    <th class="table__text heading-title column-3">
+                      <span>Дата и время создания</span>
+                      <span class="arrow-down">
+                        <svg
+                          class="arrow-down__icon"
+                          width="8"
+                          height="8"
+                          viewBox="0 0 8 8"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M3.49691e-07 4L0.705 4.705L3.5 1.915L3.5 8L4.5 8L4.5 1.915L7.29 4.71L8 4L4 -3.49691e-07L3.49691e-07 4Z"
+                            fill="#9873FF"
+                          />
+                        </svg>
+                      </span>
+                    </th>
+                    <th class="table__text heading-title column-4">
+                      <span>Последние изменения</span>
+                      <span class="arrow-down">
+                        <svg
+                          class="arrow-down__icon"
+                          width="8"
+                          height="8"
+                          viewBox="0 0 8 8"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M3.49691e-07 4L0.705 4.705L3.5 1.915L3.5 8L4.5 8L4.5 1.915L7.29 4.71L8 4L4 -3.49691e-07L3.49691e-07 4Z"
+                            fill="#9873FF"
+                          />
+                        </svg>
+                      </span>
+                    </th>
+                    <th class="table__text heading-title column-5">Контакты</th>
+                    <th class="table__text heading-title column-6">Действия</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+            <div class="clients__table-body ps table-body">
+              <table class="table-body__table table" cellspacing="0">
+                <!-- <div class="table__spinner spinner">
+                  <div class="spinner">
+                    <svg class="spinner-ico">
+                      <use href="./images/icons.svg#spinner"></use>
+                    </svg>
+                  </div>
+                </div>
+                <tbody class="table__body"></tbody> -->
+              </table>
+            </div>
+          </div>
+          <div class="clients__btn-wrapper">
+            <button class="btn button btn-reset btn--add-client">
+              <svg
+                width="23"
+                height="16"
+                viewBox="0 0 23 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M14.5 8C16.71 8 18.5 6.21 18.5 4C18.5 1.79 16.71 0 14.5 0C12.29 0 10.5 1.79 10.5 4C10.5 6.21 12.29 8 14.5 8ZM5.5 6V3H3.5V6H0.5V8H3.5V11H5.5V8H8.5V6H5.5ZM14.5 10C11.83 10 6.5 11.34 6.5 14V16H22.5V14C22.5 11.34 17.17 10 14.5 10Z"
+                  fill="#9873FF"
+                />
+              </svg>
+              <span> Добавить клиента</span>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- modal window -->
+    <div class="modal hidden">
+      <button class="btn--close-modal btn-reset"></button>
+      <form class="modal__form form" data-flag=""></form>
+    </div>
+    <div class="overlay hidden"></div>
+  </body>
+</html>
+
+<!--   <div class="contacts__select">
+            <div class="select__input">
+              <select class="input__list" name="select">
+                <option value="value1">VK</option>
+                <option value="value2" selected>Телефон</option>
+                <option value="value3">Twitter</option>
+              </select>
+              <input
+                class="input__value"
+                type="text"
+                placeholder="Введите данные контакта"
+              />
+              <button class="input__btn btn-reset hidden" type="button">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_121_1495)">
+                    <path
+                      d="M8 2C4.682 2 2 4.682 2 8C2 11.318 4.682 14 8 14C11.318 14 14 11.318 14 8C14 4.682 11.318 2 8 2ZM8 12.8C5.354 12.8 3.2 10.646 3.2 8C3.2 5.354 5.354 3.2 8 3.2C10.646 3.2 12.8 5.354 12.8 8C12.8 10.646 10.646 12.8 8 12.8ZM10.154 5L8 7.154L5.846 5L5 5.846L7.154 8L5 10.154L5.846 11L8 8.846L10.154 11L11 10.154L8.846 8L11 5.846L10.154 5Z"
+                      fill="#B0B0B0"
+                    />
+                  </g>
+                </svg>
+              </button>
+            </div>
+            <div class="select__input">
+              <select class="input__list" name="select">
+                <option value="value1">VK</option>
+                <option value="value2" selected>Телефон</option>
+                <option value="value3">Twitter</option>
+              </select>
+              <input class="input__value" type="text" />
+              <button class="input__btn btn-reset" type="button">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_121_1495)">
+                    <path
+                      d="M8 2C4.682 2 2 4.682 2 8C2 11.318 4.682 14 8 14C11.318 14 14 11.318 14 8C14 4.682 11.318 2 8 2ZM8 12.8C5.354 12.8 3.2 10.646 3.2 8C3.2 5.354 5.354 3.2 8 3.2C10.646 3.2 12.8 5.354 12.8 8C12.8 10.646 10.646 12.8 8 12.8ZM10.154 5L8 7.154L5.846 5L5 5.846L7.154 8L5 10.154L5.846 11L8 8.846L10.154 11L11 10.154L8.846 8L11 5.846L10.154 5Z"
+                      fill="#B0B0B0"
+                    />
+                  </g>
+                </svg>
+              </button>
+            </div>
+          </div> -->
+<!-- <span class="tooltip contact-item__tooltip">
+            <button class="tooltip-toggle btn-reset" type="button">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g opacity="0.7">
+                  <circle cx="8" cy="8" r="8" fill="#9873FF"/>
+                  <path d="M11.56 9.50222C11.0133 9.50222 10.4844 9.41333 9.99111 9.25333C9.83556 9.2 9.66222 9.24 9.54222 9.36L8.84444 10.2356C7.58667 9.63556 6.40889 8.50222 5.78222 7.2L6.64889 6.46222C6.76889 6.33778 6.80444 6.16444 6.75556 6.00889C6.59111 5.51556 6.50667 4.98667 6.50667 4.44C6.50667 4.2 6.30667 4 6.06667 4H4.52889C4.28889 4 4 4.10667 4 4.44C4 8.56889 7.43556 12 11.56 12C11.8756 12 12 11.72 12 11.4756V9.94222C12 9.70222 11.8 9.50222 11.56 9.50222Z" fill="white"/>
+                </g>
+              </svg>  
+            </button>
+            <span class="tooltip-text">${contact.value}</span>
+          </span> -->
+
+<!-- <tr class="table__row row--body" data-id="11111">
+                    <td class="table__text body-text body-text--id column-1">
+                      123455
+                    </td>
+                    <td class="table__text body-text column-2">
+                      Скворцов Денис Юрьевич
+                    </td>
+                    <td class="table__text body-text column-3">
+                      21.02.2021 <span class="body-text--time">12:41</span>
+                    </td>
+                    <td class="table__text body-text column-4">
+                      21.02.2021 <span class="body-text--time">14:50</span>
+                    </td>
+                    <td class="table__text body-text column-5">
+                      <ul class="table__list contacts-list list-reset">
+                        <li class="contacts-list__item contact-item">
+                          <a href="" class="contact-item__link">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="16"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              fill="none"
+                            >
+                              <g opacity="0.7">
+                                <circle cx="8" cy="8" r="8" fill="#9873FF" />
+                                <path
+                                  d="M11.56 9.50222C11.0133 9.50222 10.4844 9.41333 9.99111 9.25333C9.83556 9.2 9.66222 9.24 9.54222 9.36L8.84444 10.2356C7.58667 9.63556 6.40889 8.50222 5.78222 7.2L6.64889 6.46222C6.76889 6.33778 6.80444 6.16444 6.75556 6.00889C6.59111 5.51556 6.50667 4.98667 6.50667 4.44C6.50667 4.2 6.30667 4 6.06667 4H4.52889C4.28889 4 4 4.10667 4 4.44C4 8.56889 7.43556 12 11.56 12C11.8756 12 12 11.72 12 11.4756V9.94222C12 9.70222 11.8 9.50222 11.56 9.50222Z"
+                                  fill="white"
+                                />
+                              </g>
+                            </svg>
+                          </a>
+                        </li>
+                        <li class="contacts-list__item contact-item">
+                          <a href="" class="contact-item__link"
+                            ><svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="16"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              fill="none"
+                            >
+                              <g opacity="0.7">
+                                <circle cx="8" cy="8" r="8" fill="#9873FF" />
+                                <path
+                                  d="M11.56 9.50222C11.0133 9.50222 10.4844 9.41333 9.99111 9.25333C9.83556 9.2 9.66222 9.24 9.54222 9.36L8.84444 10.2356C7.58667 9.63556 6.40889 8.50222 5.78222 7.2L6.64889 6.46222C6.76889 6.33778 6.80444 6.16444 6.75556 6.00889C6.59111 5.51556 6.50667 4.98667 6.50667 4.44C6.50667 4.2 6.30667 4 6.06667 4H4.52889C4.28889 4 4 4.10667 4 4.44C4 8.56889 7.43556 12 11.56 12C11.8756 12 12 11.72 12 11.4756V9.94222C12 9.70222 11.8 9.50222 11.56 9.50222Z"
+                                  fill="white"
+                                />
+                              </g>
+                            </svg>
+                          </a>
+                        </li>
+                        <li class="contacts-list__item contact-item">
+                          <a href="" class="contact-item__link"
+                            ><svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="16"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              fill="none"
+                            >
+                              <g opacity="0.7">
+                                <circle cx="8" cy="8" r="8" fill="#9873FF" />
+                                <path
+                                  d="M11.56 9.50222C11.0133 9.50222 10.4844 9.41333 9.99111 9.25333C9.83556 9.2 9.66222 9.24 9.54222 9.36L8.84444 10.2356C7.58667 9.63556 6.40889 8.50222 5.78222 7.2L6.64889 6.46222C6.76889 6.33778 6.80444 6.16444 6.75556 6.00889C6.59111 5.51556 6.50667 4.98667 6.50667 4.44C6.50667 4.2 6.30667 4 6.06667 4H4.52889C4.28889 4 4 4.10667 4 4.44C4 8.56889 7.43556 12 11.56 12C11.8756 12 12 11.72 12 11.4756V9.94222C12 9.70222 11.8 9.50222 11.56 9.50222Z"
+                                  fill="white"
+                                />
+                              </g>
+                            </svg>
+                          </a>
+                        </li>
+                        <li class="contacts-list__item contact-item">
+                          <a href="" class="contact-item__link"
+                            ><svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="16"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              fill="none"
+                            >
+                              <g opacity="0.7">
+                                <circle cx="8" cy="8" r="8" fill="#9873FF" />
+                                <path
+                                  d="M11.56 9.50222C11.0133 9.50222 10.4844 9.41333 9.99111 9.25333C9.83556 9.2 9.66222 9.24 9.54222 9.36L8.84444 10.2356C7.58667 9.63556 6.40889 8.50222 5.78222 7.2L6.64889 6.46222C6.76889 6.33778 6.80444 6.16444 6.75556 6.00889C6.59111 5.51556 6.50667 4.98667 6.50667 4.44C6.50667 4.2 6.30667 4 6.06667 4H4.52889C4.28889 4 4 4.10667 4 4.44C4 8.56889 7.43556 12 11.56 12C11.8756 12 12 11.72 12 11.4756V9.94222C12 9.70222 11.8 9.50222 11.56 9.50222Z"
+                                  fill="white"
+                                />
+                              </g>
+                            </svg>
+                          </a>
+                        </li>
+                        <li class="contacts-list__item contact-item">
+                          <a href="" class="contact-item__link"
+                            ><svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="16"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              fill="none"
+                            >
+                              <g opacity="0.7">
+                                <circle cx="8" cy="8" r="8" fill="#9873FF" />
+                                <path
+                                  d="M11.56 9.50222C11.0133 9.50222 10.4844 9.41333 9.99111 9.25333C9.83556 9.2 9.66222 9.24 9.54222 9.36L8.84444 10.2356C7.58667 9.63556 6.40889 8.50222 5.78222 7.2L6.64889 6.46222C6.76889 6.33778 6.80444 6.16444 6.75556 6.00889C6.59111 5.51556 6.50667 4.98667 6.50667 4.44C6.50667 4.2 6.30667 4 6.06667 4H4.52889C4.28889 4 4 4.10667 4 4.44C4 8.56889 7.43556 12 11.56 12C11.8756 12 12 11.72 12 11.4756V9.94222C12 9.70222 11.8 9.50222 11.56 9.50222Z"
+                                  fill="white"
+                                />
+                              </g>
+                            </svg>
+                          </a>
+                        </li>
+                      </ul>
+                    </td>
+                    <td class="table__text body-text column-6">
+                      <button class="table__btn btn-reset btn--edit ">
+                        Изменить</button
+                      ><button
+                        class="table__btn btn-reset btn--delete "
+                      >
+                        Удалить
+                      </button>
+                    </td>
+                  </tr> -->
